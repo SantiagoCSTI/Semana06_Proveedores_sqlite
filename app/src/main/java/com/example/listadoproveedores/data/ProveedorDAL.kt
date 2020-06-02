@@ -4,7 +4,7 @@ import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.example.menucarta.bean.ProveedorBean
-
+//aGREGADO EL GITHUB
 class ProveedorDAL: ClaseBase() {
     val NOMBRE_TABLA="Proveedor"
     init
