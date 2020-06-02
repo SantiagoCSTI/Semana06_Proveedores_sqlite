@@ -13,6 +13,7 @@ import com.example.listadoproveedores.Actividad.ListaAlumnoGridView
 import com.example.listadoproveedores.Actividad.ListadoAlumno
 import com.example.listadoproveedores.Adaptador.AdaptadorProveedor
 import com.example.listadoproveedores.Tools.Constantes
+import com.example.listadoproveedores.data.ProveedorDAL
 import com.example.menucarta.bean.ProveedorBean
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,11 +27,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         oListaproveedor= ArrayList<ProveedorBean>()
-        oListaproveedor.add(ProveedorBean(1,"1041009882","Cibertec SAC",
+       /* oListaproveedor.add(ProveedorBean(1,"1041009882","Cibertec SAC",
             "Av Izaguirre"))
         oListaproveedor.add(ProveedorBean(2,"3453453454","MEtro SAC",
             "Av Izaguirre"))
-
+*/
+        var oProveedorDAL:ProveedorDAL= ProveedorDAL()
+        oListaproveedor=oProveedorDAL.Lista(ProveedorBean())
         oAdaptadorProveedor= AdaptadorProveedor(oListaproveedor.toList(), this)
         val llm = LinearLayoutManager(this)
         llm.orientation = LinearLayoutManager.VERTICAL
@@ -70,6 +73,8 @@ class MainActivity : AppCompatActivity() {
         oedtrazonsocialnuevo.text.toString(),
         oedtdireccionnuevo.text.toString() )
 
+        var oProveedorDAL:ProveedorDAL=ProveedorDAL()
+        oProveedorDAL.RegistraModifica(oProveedorBean, Constantes.NUEVO_REGISTRO)
         oListaproveedor.add(oProveedorBean)
 
         oAdaptadorProveedor= AdaptadorProveedor(oListaproveedor.toList(), this)
