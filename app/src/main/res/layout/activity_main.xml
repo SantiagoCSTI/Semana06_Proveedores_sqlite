@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TableRow android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Listado de proveedores"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtRazonSocial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Razon Social" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </TableRow>
+    <TableRow android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+
+
+        <TextView
+            android:id="@+id/TVMensajes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 0 Registros localizados " />
+    </TableRow>
+    <TableRow android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+
+
+        <Button
+            android:id="@+id/btnConsultaProveedor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Consultar" />
+
+        <Button
+            android:id="@+id/btnNuevoProveedor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btnCargarDialogo_onclick"
+            android:text="Nuevo" />
+
+        <Button
+            android:id="@+id/btnAlumnoNuevo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btnNuevoAlumno_onclick"
+            android:text="Nuevo Alumno" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fbListaGridView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#3F51B5"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_nuevo" />
+    </TableRow>
+    <TableRow android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lvListaProveedor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableRow>
+
+</LinearLayout>
