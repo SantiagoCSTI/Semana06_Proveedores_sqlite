@@ -23,7 +23,6 @@ lateinit var oListaAlumnos:ArrayList<AlumnoBean>
 
         oAdaptadorAlumno= AdaptadorAlumno(oListaAlumnos,this)
 
-
         val llm = LinearLayoutManager(this)
         llm.orientation = LinearLayoutManager.VERTICAL
         rvListadoAlumnos.setLayoutManager(llm)

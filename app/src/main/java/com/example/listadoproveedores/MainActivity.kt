@@ -7,6 +7,7 @@ import android.view.View
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listadoproveedores.Actividad.ListaAlumnoGridView
@@ -34,7 +35,10 @@ class MainActivity : AppCompatActivity() {
 */
         var oProveedorDAL:ProveedorDAL= ProveedorDAL()
         oListaproveedor=oProveedorDAL.Lista(ProveedorBean())
-        oAdaptadorProveedor= AdaptadorProveedor(oListaproveedor.toList(), this)
+        oAdaptadorProveedor= AdaptadorProveedor(oListaproveedor.toList())
+        {
+            Toast.makeText(this,"PRoveedor Seleccionado:" + it.RazonSocial, Toast.LENGTH_LONG).show()
+        }
         val llm = LinearLayoutManager(this)
         llm.orientation = LinearLayoutManager.VERTICAL
         lvListaProveedor.setLayoutManager(llm)
@@ -77,7 +81,10 @@ class MainActivity : AppCompatActivity() {
         oProveedorDAL.RegistraModifica(oProveedorBean, Constantes.NUEVO_REGISTRO)
         oListaproveedor.add(oProveedorBean)
 
-        oAdaptadorProveedor= AdaptadorProveedor(oListaproveedor.toList(), this)
+        oAdaptadorProveedor= AdaptadorProveedor(oListaproveedor.toList())
+        {
+            Toast.makeText(this,"PRoveedor Seleccionado:" + it.RazonSocial, Toast.LENGTH_LONG).show()
+        }
         lvListaProveedor.setAdapter(oAdaptadorProveedor)
     }
 
